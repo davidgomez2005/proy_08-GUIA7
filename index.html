@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funcion constructora</title>
+</head>
+<body>
+    
+<h1>HOLAA MUNDO</h1>
+
+    <script>
+
+
+/*    const aprendiz1 = {
+        nombre: `david`,
+        documento: `112208362`,
+        edad: 18,
+
+        saludar : function () {
+            console.log (`Hola, me llamo ${this.nombre}` 
+            + ` y tengo ${this.edad} años`);
+        
+        },
+
+        despedida : function () {
+            console.log (`Como dijo mi papa los abandono les dice ${this.nombre}`);
+
+        }
+
+    
+    }
+
+    console.log(`acto 1`);
+
+    console.log({aprendiz1});
+
+    console.log(`acto2`);
+
+    aprendiz1.saludar();
+    aprendiz1.despedida();
+
+    console.log(`acto3`);
+    
+    aprendiz1.nombre = `David Perez`;
+    aprendiz1.saludar();
+
+    console.log(`acto4`);
+    
+    aprendiz1[`apellido`] = `Morales`;
+    aprendiz1[`nombre`] = `Pablo Escobar`;
+    aprendiz1.saludar();
+
+    console.log(`acto5`);
+    aprendiz1[`edad`] = 24;
+    aprendiz1.saludar = function(){
+        console.log(`Hola, me llamo ${this.nombre} ${this.apellido}` + 
+        ` y tengo ${this.edad} años`);
+    }
+    aprendiz1.saludar();
+
+    console.log(`acto6`);
+    const ficha = `ficha`;
+    const numficha = `2798618`;
+    const progFicha = `ADSO`;
+    aprendiz1[ficha] = numficha;
+    aprendiz1[`programa`] = progFicha;
+    aprendiz1.estudiar = function(){
+        console.log(`estoy madriculado en la ficha ${this.ficha}` 
+        + ` y cursando primer trimestre del programa ${this.programa}!`);
+
+    }
+
+    aprendiz1.estudiar(); 
+
+   function Aprendiz(documento,nombres,apellidos,edad,ficha,programa) {
+    this.documento = documento;
+    this.nombres = nombres;
+    this.apellidos = apellidos;
+    this.edad = edad;
+    this.ficha = ficha;
+    this.programa = programa;
+   }
+
+let aprendiz = new Aprendiz(`5373576`,`juan david`,`perez`,76,`2798619`,`ADSO`);
+
+   console.log({aprendiz});
+
+   const aprendizPrototype = {
+        saludar(){
+            console.log(`hola,me llamo ${this.nombres}` + ` y tengo ${this.edad} años`);
+        },
+
+        despedida(){
+            console.log(`feliz aprendizaje! les desea ${this.nombres}` + `${this.apellidos}`);
+        },
+
+        estudiar(){
+            console.log(`matriculado en la ficha ${this.ficha}` + 
+            ` y cursando 1er trimentre del programa ${this.programa}!`);
+    }
+}
+
+Object.assign(Aprendiz.prototype, aprendizPrototype);
+    
+let aprendiz1 = new Aprendiz (`5373576`,`juan david`,`perez`,76,`2798619`,`ADSO`);
+
+        console.log({aprendiz1});
+
+        Aprendiz.prototype.saludar = function (){
+            console.log(`hola,me llamo ${this.nombres}` + 
+            ` y tengo ${this.edad} años`);
+        }
+
+        Aprendiz.prototype.despedida = function(){
+            console.log(`feliz aprendizaje! les desea ${this.nombres}` + 
+            `${this.apellidos}`);
+        }
+
+        Aprendiz.prototype.estudiar = function(){
+            console.log(`matriculado en la ficha ${this.ficha}` + 
+            ` y cursando 1er trimentre del programa ${this.programa}!`);
+    }
+
+    function AprendizEtapaPractica(documento, nombres, apellidos,edad,
+                                    ficha,programa,empresa,funcion) {
+             this.super = Aprendiz;
+             this.super(documento,nombres,apellidos,edad,ficha,programa);
+             this.empresa = empresa;
+             this.funcion = funcion;
+ }
+
+ AprendizEtapaPractica.prototype = new Aprendiz();
+ AprendizEtapaPractica.prototype.constructor = Aprendiz;
+
+ AprendizEtapaPractica.prototype.estudiar = function (){
+    console.log(`termine tapa electiva y me encuentro en etapa productiva`);
+ }
+
+ AprendizEtapaPractica.prototype.trabajar = function(){
+    console.log(`estoy trabajando en la empresa ${this.empresa} ` + 
+    `cumpliendo funciones de ${this.funcion}`);
+ }
+
+ let aprendiz2 = new AprendizEtapaPractica(`87378`,`sebastian`,`morales`,25,
+                       `325122`, `ADSO`,`IED pompilio martinez`,`Instructor`);
+ console.log({aprendiz2});
+
+ aprendiz2.estudiar();
+ aprendiz2.trabajar(); */
+
+
+ console.log(`/////////////// Numero 1 //////////`)
+
+ function Automovil(Marca,linea,Modelo,Cilindraje,precio) {
+       this.Marca = Marca;
+       this.linea = linea;
+       this.Modelo = Modelo;
+       this.Cilindraje = Cilindraje;
+       this.precio = precio;  
+}
+
+let Automovil1 = new Automovil(`Nissan`,`4x4`,2015,`95.000`,`150milones`);
+
+
+Automovil.prototype.nivelGasolina = function(){
+      console.log( `Nivel de gasolina es ` + Math.floor(Math.random() * 101) + `%`);
+}
+
+
+Automovil.prototype.tecnoMecanica = function(){
+
+    let d = new Date();
+    let n = d.getFullYear();
+
+    if (n-this.Modelo < 5) {
+        console.log(`no cesesita tecno`)
+    } else {console.log(`necesita tecno ya que el automovil es del ${this.Modelo}`)
+
+    }
+}
+ 
+
+console.log({Automovil1});
+
+Automovil1.nivelGasolina();
+Automovil1.tecnoMecanica();
+
+
+function automovilseda(Marca,linea,Modelo,Cilindraje,precio,numero,tipocaja){
+    this.super = Automovil;
+    this.super(Marca,linea,Modelo,Cilindraje,precio);
+    this.numero = numero;
+    this.tipocaja = tipocaja;
+}
+
+ automovilseda.prototype = new Automovil();
+ automovilseda.prototype.constructor = Automovil;
+
+ let Automovil2 = new automovilseda(`BMW`,`X5`,`2017`,`50000`,`20mil`,5,`electrico`);
+
+ automovilseda.prototype.numeropasajeros = function(){
+                 console.log(`El automovil ${this.Marca} tiene ` +
+                  `4 Cinturones`);
+ }
+
+console.log({Automovil2})
+Automovil2.numeropasajeros();
+ 
+console.log(`/////////////// Numero 2 //////////`);
+
+
+function Instructor(Nombre,linea,jornada) {
+        this.Nombre = Nombre;
+        this.jornada = jornada;
+        this.linea = linea;
+}
+
+let Instructor1 = new Instructor(`julian morales`,`software`,`Tarde`);
+
+
+Instructor.prototype.lineaDeFormacion = function(){
+                switch (this.linea) {
+                    case `software`: 
+                        return(`Pertenece a Análisis y desarrollo de ${this.linea}`);
+                        break;
+                    case `hardware`:
+                        return(`Pertenece a Administración de redes ${this.linea}`);
+                        break;
+                    default: `cualquier otra`
+                        return(`no se tiene registro calificado 
+                                para esas líneas tecnológicas`);
+                        break; 
+                }
+}
+console.log({Instructor1})
+
+console.log(Instructor1.lineaDeFormacion());
+
+
+function InstructorPlanta(Nombre,linea,jornada){
+     this.super = Instructor
+     this.super(Nombre,linea,jornada);
+     
+}
+
+let Instructor2 = new InstructorPlanta(`juana `,`hardware`,`Mañana`);
+
+console.log({Instructor2});
+
+console.log(`//////////////// Numero 3 //////////`);
+
+function Restaurante(plato,cantidad,precio) {
+        this.plato = plato;
+        this.cantidad = cantidad;
+        this.precio = precio;
+
+}
+
+let plato1 = new Restaurante(`pizza`,`5`,12000);
+
+
+Restaurante.prototype.valorPedido = function(){
+      const precioTotal = this.cantidad * this.precio;
+      if (precioTotal >= 50000) {
+          const descuento = 10
+          const descuentoPrecioTotal = (descuento/100)*precioTotal
+          const cuentaFinal = precioTotal - descuentoPrecioTotal
+          console.log(`el valor a pagar es ${precioTotal} ` + 
+          `tienes un descuento de ${descuento}` + 
+          `tu total a pagar es ${cuentaFinal}`)
+      } else {
+        console.log(`el total a pagar es ${precioTotal}\n ` + 
+        `para aplicar descuento yu compra tiene que ser mayor a 50k`)
+      }
+}
+
+console.log({plato1});
+
+plato1.valorPedido();
+
+
+function RestauranteDomicilio (plato,cantidad,precio,timpoEntrega,valorDomicilio) {
+     this.super = Restaurante;
+     this.super(plato,cantidad,precio);
+     this.timpoEntrega = timpoEntrega;
+     this.valorDomicilio = valorDomicilio;
+}
+
+let plato2 = new RestauranteDomicilio(`salchipapa`,`2`,15000,`30minutos`,1500);
+
+console.log({plato2});
+
+let nombreDelRestaurante = `Don chucho`;
+
+const elRestaurante = {
+    informacionRestaurante(){
+        console.log(`Nombre del restaurante:${nombreDelRestaurante}
+        Tipo comida:AREPA,PIZZA,PERRO,HAMBURGUESA,EMPANADAS Y CHORIZO
+        Lugar centro de mosquera al lado de la iglesia
+        Hora: todos los dias de 9am hasta 10pm
+        TE ESPERAMOS  `)
+    }
+}
+
+RestauranteDomicilio.prototype.totalConDomicilio = function(){
+      const precioTotal = this.cantidad * this.precio + this.valorDomicilio;
+      if (precioTotal >= 50000) {
+          const descuento = 10
+          const descuentoPrecioTotal = (descuento/100)*precioTotal
+          const cuentaFinal = precioTotal - descuentoPrecioTotal 
+          const masDomicilio = cuentaFinal 
+          console.log(`total de su pedido es  ${masDomicilio} ` + 
+          `con un descuento de  ${descuentoPrecioTotal}` + 
+          ` incluyendo el valor del domicilio ${this.valorDomicilio}`)
+      } else { 
+        console.log(`el total de su pedido es  ${precioTotal}\n ` + 
+        `porque incluye ${this.valorDomicilio} del domicilio` + 
+        ` para aplicar el descuento su compra tiene que ser mayor a 50k`)
+      }
+      
+}
+
+
+plato2.totalConDomicilio();
+
+elRestaurante.informacionRestaurante(); 
+
+</script>
+</body>
+</html>
+
+    </script>
+    
+</body>
+</html>
